@@ -1,0 +1,43 @@
+<div id="profileContainer">
+  <div class="profile-box ">
+  <div class="top-section">
+    <div class="left">
+      <div class="avatar">
+        <img alt="avatar" src="{{userData?.avatar_url}}" />
+      </div>
+      <div class="self">
+        <h1>{{userData?.name}}</h1>
+        <h1>{{userData?.login}}</h1>
+      </div>
+    </div>
+    <button type="button" class="btn bg-sky-300/100 hover:bg-sky-500/100 text-black serch" (click)="goToSearch()">GoTo Search</button>
+    <a href="{{userData?.html_url}}" target="_black">
+    <button type="button" class="btn bg-sky-300/100 hover:bg-sky-500/100 text-black serch2">Check Profile</button>
+    </a>
+
+
+  </div>
+
+  <div class="about">
+    <h2>About</h2>
+    <p>
+    {{userData?.bio}}
+    </p>
+  </div>
+  <div class="status">
+    <div class="status-item">
+      <h3>Followers</h3>
+      <p>{{userData?.followers}}</p>
+    </div>
+    <div class="status-item">
+      <h3>Followings</h3>
+      <p>{{userData?.following}}</p>
+    </div>
+    <div class="status-item">
+      <h3>Repos</h3>
+      <p>{{userData?.public_repos}}</p>
+    </div>
+  </div>
+</div>
+</div>
+<app-repository></app-repository>

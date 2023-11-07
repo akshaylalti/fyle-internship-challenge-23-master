@@ -1,0 +1,38 @@
+<div class="mt-8 main">
+  <div *ngFor="let publicRepo of publicRepos | paginate: { itemsPerPage: 10, currentPage: p }" class="w-18 child">
+    <div class="card" style="width: 18rem; height: 10rem;">
+      <div class="card-body">
+        <h5 class="card-title font-medium text-2xl text-sky-500">{{publicRepo.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary font-medium text-xs text-black">{{publicRepo.description}}</h6>
+        <p class="card-text">
+          <span class="mr-1 border-solid border-2 border-sky-500 rounded-lg bg-sky-500/100 text-white font-small text-xs">{{publicRepo.language}}</span>
+          <!-- <span class="mr-1  border-solid border-2 border-sky-500 rounded-lg bg-sky-500/100 text-white font-small text-xs">{{langugae}}</span> -->
+
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="grid h-screen place-items-center">
+  <div class="font-bold text-3xl">
+    Test Internship Challenge
+    <div *ngFor="let repo of publicRepos; index as i">{{i+1}} | {{repo.name}}
+      <div *ngFor="let langugae of repo.languages">{{langugae}}</div>
+    </div>
+</div>
+</div> -->
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+
+
+  <!-- <div *ngFor="let repo of repositoryLanguages">
+    <ul>
+      <li *ngFor="let lang of repo.languages | keyvalue">
+        {{ lang.key }}
+      </li>
+    </ul>
+  </div> -->
